@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publish</title>
+  <style>
+    #app {
+      width: 100%;
+      max-width: 600px;
+      margin: 10px auto;
+    }
+    #template {
+      display: none;
+    }
+    textarea {
+      width: 100%;
+      height: 200px
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <textarea id="work-info" cols="20" row="20"></textarea><br>
+    <button id="publish-btn">获取 HTML</button><br><br>
+    <textarea id="result"></textarea>
+  </div>
+  <div id="template">
+    <img alt="封面" style="margin-left: 10px; margin-bottom: 10px;" id="wr-cover">
+    <span style="font-family: arial, tahoma, verdana; color: rgb(60, 60, 60); font-size: 14px;" id="wr-info"></span>
+    <ul style="font-family: arial, tahoma, verdana; color: rgb(60, 60, 60); font-size: 14px; margin-top: 20px; font-size: 12px; padding: 9px 18px; border-left: 4px solid #1d953f; background-color: #fafafa; list-style: none; word-break: break-all; position: relative; overflow: hidden;">
+      <li><h4 style="margin: 2px 0; font-size: 20px;">离谱Sub</h4></li>
+      <li><strong>翻译：</strong><span>他们都叫我鸡哥 用爱发电的萌新</span></li>
+      <li><strong>校对：</strong><span>ま、いっか</span></li>
+      <li><strong>时轴：</strong><span>球球</span></li>
+      <li><strong>特效：</strong><span>Lambholl</span></li>
+      <li><strong>压制：</strong><span>M.B.F. 火能搞活</span></li>
+      <div style="margin-top: 8px;">
+        <li>本作品采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" style="color: rgb(5, 58, 255); text-decoration-line: none;">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a> 进行许可</li>
+        <li><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank"><img style="margin-top: 4px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" alt="Creative Commons"></a></li>
+      </div>
+    </ul>
+    <ul style="font-family: arial, tahoma, verdana; color: rgb(60, 60, 60); font-size: 13px; margin-top: 20px; font-size: 12px; padding: 9px 18px; border-left: 4px solid #1d953f; background-color: #fafafa; list-style: none; word-break: break-all; position: relative; overflow: hidden;">
+      <li><h4 style="margin: 2px 0; font-size: 20px;">交流 / 报错 / 加入我们 欢迎加入</h4></li>
+      <li><strong>QQ群：</strong><span>690716401</span></li>
+      <li><strong>Telegram频道：</strong><span><a href="https://t.me/lpsub_ch" target="_blank" style="color: rgb(5, 58, 255); text-decoration-line: none;"></a><em>@lpsub_ch</em></a></span></li>
+      <li><strong>Telegram群组：</strong><span><a href="https://t.me/lpsub_chat" target="_blank" style="color: rgb(5, 58, 255); text-decoration-line: none;"><em>@lpsub_chat</em></a></span></li>
+      <li><strong>邮箱：</strong><span><a style="color: rgb(5, 58, 255); text-decoration-line: none;" height: 1px; border-top: 1px dashed rgb(60, 60, 60);ef="mailto:lpsub@yunyize.com">lpsub@yunyize.com</a></span></li>
+      <div style="margin-top: 8px;">
+        <li><strong>爱发电：</strong><span><a height: 1px; border-top: 1px dashed rgb(60, 60, 60);ef="https://www.afdian.net/@lpsub" target="_blank" style="font-family: arial, tahoma, verdana; color: rgb(60, 60, 60); text-decoration-line: none;">https://www.afdian.net/@lpsub</a></span></li>
+      </div>
+    </ul>
+    <ul style="font-family: arial, tahoma, verdana; color: rgb(60, 60, 60); font-size: 13px; margin-top: 20px; font-size: 12px; padding: 9px 18px; border-left: 4px solid #1d953f; background-color: #fafafa; list-style: none; word-break: break-all; position: relative; overflow: hidden;">
+      <li><h4 style="margin: 2px 0; font-size: 20px;">字幕组招募：翻译 校对 时轴 压制 繁化</h4></li>
+      <li><strong>翻译：</strong><span>能正确听译动画即可，同时有一定语文水平（虽然不一定文笔要多好，但是至少不能写出病句）；</span></li>
+      <li><strong>校对：</strong><span>能对翻译稿的错误进行校正，同时有一定语文水平（当然也是至少不能写出病句）；</span></li>
+      <li><strong>压制：</strong><span>要求有一定的压制设备（10代i5及以上水平），使用 VapourSynth 进行压制（能写脚本最好，不会也行）（当然我们实际使用的是 OKEGui 进行压制，详见 <a href="https://github.com/lpsub-114514/Encode-Tools" target="_blank" style="text-decoration-line: none;"><strong>GitHub</strong></a>；</span></li>
+      <li><strong>时轴：</strong><span>能使用 Aegisub 打轴，同时能利用 Advanced SubStation Alpha 和 Aegisub 等的特性写一些特效，同时能设置合适的样式；</span></li>
+      <li><strong>繁化：</strong><span>如果您生活在或曾经生活在中国香港或其周边地区，对当地用语习惯比较熟悉，那么欢迎加入我们，进行字幕繁化工作；</span></li>
+      <hr>
+      <li><span>我们长期提供 <strong>时轴</strong> / <strong>压制</strong> 教学</span></li>
+    </ul>
+  </div>
+  
+  <script>
+    document.getElementById('publish-btn').onclick = function() {
+      const workInfo = document.getElementById('work-info').value;
+      const workInfoLines = workInfo.split('\n');
+      let workInfoHtml = '';
+      for (const line of workInfoLines) {
+        if (line.startsWith('[img]')) {
+          document.getElementById('wr-cover').setAttribute('src', line.replace('[img]', '').replace('[/img]', ''));
+        } else if (line !== '' && !line.includes('◎简　　介')) {
+          workInfoHtml += `<div>${line}</div>`;
+        } else if (line !== '' && line.includes('◎简　　介')) {
+          workInfoHtml += `<div>${line}</div>`;
+          workInfoHtml += `<span>${workInfoLines[workInfoLines.length - 1]}</div>`;
+          break;
+        }
+      }
+      document.getElementById('wr-info').innerHTML = workInfoHtml;
+      document.getElementById('result').value = document.getElementById('template').innerHTML;
+    }
+  </script>
+</body>
+</html>
